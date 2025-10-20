@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:settings_ui/settings_ui.dart';
 
 class WebChromeAddressesScreen extends StatefulWidget {
-  WebChromeAddressesScreen({Key key}) : super(key: key);
+  WebChromeAddressesScreen({Key? key}) : super(key: key);
 
   @override
-  State<WebChromeAddressesScreen> createState() =>
-      _WebChromeAddressesScreenState();
+  State<WebChromeAddressesScreen> createState() => _WebChromeAddressesScreenState();
 }
 
 class _WebChromeAddressesScreenState extends State<WebChromeAddressesScreen> {
@@ -24,27 +23,20 @@ class _WebChromeAddressesScreenState extends State<WebChromeAddressesScreen> {
             tiles: [
               SettingsTile.switchTile(
                 initialValue: _toggle,
-                onToggle: (_) {
+                onToggle: (a) {
                   setState(() {
-                    _toggle = _;
+                    _toggle = a;
                   });
                 },
                 trailing: Icon(Icons.info),
                 title: Text('Save and fill addresses'),
-                description: Text(
-                    'Include information like phone numbers, email, and shipping addresses'),
+                description: Text('Include information like phone numbers, email, and shipping addresses'),
               ),
             ],
           ),
           SettingsSection(
             title: Text('Addresses'),
-            tiles: [
-              SettingsTile.navigation(
-                onPressed: (_) {},
-                title: Text('Name, addresses'),
-                trailing: Icon(Icons.more_vert),
-              ),
-            ],
+            tiles: [SettingsTile.navigation(onPressed: (_) {}, title: Text('Name, addresses'), trailing: Icon(Icons.more_vert))],
           ),
         ],
       ),

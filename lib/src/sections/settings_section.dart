@@ -12,8 +12,8 @@ class SettingsSection extends AbstractSettingsSection {
     required this.tiles,
     this.margin,
     this.title,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final List<AbstractSettingsTile> tiles;
   final EdgeInsetsDirectional? margin;

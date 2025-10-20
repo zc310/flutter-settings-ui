@@ -28,8 +28,8 @@ class SettingsList extends StatelessWidget {
     this.brightness,
     this.contentPadding,
     this.applicationType = ApplicationType.material,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final bool shrinkWrap;
   final ScrollPhysics? physics;

@@ -21,7 +21,7 @@ class AndroidSettingsSection extends StatelessWidget {
 
   Widget buildSectionBody(BuildContext context) {
     final theme = SettingsTheme.of(context);
-    final scaleFactor = MediaQuery.of(context).textScaleFactor;
+    final scaleFactor = MediaQuery.textScalerOf(context).scale(1.0);
     final tileList = buildTileList();
 
     if (title == null) {

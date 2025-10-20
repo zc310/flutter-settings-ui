@@ -32,7 +32,7 @@ class AndroidSettingsTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = SettingsTheme.of(context);
-    final scaleFactor = MediaQuery.of(context).textScaleFactor;
+    final scaleFactor = MediaQuery.textScalerOf(context).scale(1.0);
 
     final cantShowAnimation = tileType == SettingsTileType.switchTile
         ? onToggle == null && onPressed == null
@@ -126,7 +126,7 @@ class AndroidSettingsTile extends StatelessWidget {
                         child: Switch(
                           value: initialValue,
                           onChanged: onToggle,
-                          activeColor: enabled
+                          activeThumbColor: enabled
                               ? activeSwitchColor
                               : theme.themeData.inactiveTitleColor,
                         ),
@@ -140,7 +140,7 @@ class AndroidSettingsTile extends StatelessWidget {
                     child: Switch(
                       value: initialValue,
                       onChanged: onToggle,
-                      activeColor: enabled
+                      activeThumbColor: enabled
                           ? activeSwitchColor
                           : theme.themeData.inactiveTitleColor,
                     ),

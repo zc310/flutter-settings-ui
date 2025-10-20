@@ -4,13 +4,13 @@ version: 1.0.0+1
 publish_to: none
 
 environment:
-  sdk: ">=2.1.12 <3.0.0"
+  sdk: ^3.9.0
 
 dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.4
-  device_preview: 1.0.0
+  device_preview: ^1.2.0
   settings_ui:
     path: ../
 

@@ -94,7 +94,7 @@ class _IOSSettingsTileState extends State<IOSSettingsTile> {
     required SettingsTheme theme,
     required IOSSettingsTileAdditionalInfo additionalInfo,
   }) {
-    final scaleFactor = MediaQuery.of(context).textScaleFactor;
+    final scaleFactor = MediaQuery.textScalerOf(context).scale(1.0);
 
     return Container(
       width: MediaQuery.of(context).size.width,
@@ -121,7 +121,7 @@ class _IOSSettingsTileState extends State<IOSSettingsTile> {
     required BuildContext context,
     required SettingsTheme theme,
   }) {
-    final scaleFactor = MediaQuery.of(context).textScaleFactor;
+    final scaleFactor = MediaQuery.textScalerOf(context).scale(1.0);
 
     return Row(
       children: [
@@ -130,7 +130,7 @@ class _IOSSettingsTileState extends State<IOSSettingsTile> {
           CupertinoSwitch(
             value: widget.initialValue ?? true,
             onChanged: widget.onToggle,
-            activeColor: widget.enabled
+            activeTrackColor: widget.enabled
                 ? widget.activeSwitchColor
                 : theme.themeData.inactiveTitleColor,
           ),
@@ -174,7 +174,7 @@ class _IOSSettingsTileState extends State<IOSSettingsTile> {
     SettingsTheme theme,
     IOSSettingsTileAdditionalInfo additionalInfo,
   ) {
-    final scaleFactor = MediaQuery.of(context).textScaleFactor;
+    final scaleFactor = MediaQuery.textScalerOf(context).scale(1.0);
 
     return GestureDetector(
       behavior: HitTestBehavior.translucent,
